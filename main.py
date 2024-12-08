@@ -15,6 +15,7 @@ def move_up():
     global y, x, radius
     y += speed
     x, y, radius = graphics.update_pos(circle, x, y, radius)
+    print("Key")
 
 def move_down():
     global y, x, radius
@@ -31,9 +32,9 @@ def move_right():
     x += speed
     x, y, radius = graphics.update_pos(circle, x, y, radius)
 
-input.key_press(win, "w", move_up)
-input.key_press(win, "s", move_down)
-input.key_press(win, "a", move_left)
-input.key_press(win, "d", move_right)
+input.key_press(win, "Up", move_up)
+input.key_press(win, "Down", move_down)
+input.key_press(win, "Left", move_left)
+input.key_press(win, "Right", move_right)
 
 window.run(win)
