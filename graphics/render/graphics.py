@@ -1,4 +1,5 @@
 import turtle
+from PIL import Image, ImageTk
 
 
 def create_rectangle(x, y, width, height, color):
@@ -45,3 +46,17 @@ def update_pos(circle, x, y, radius):
     circle.end_fill()
 
     return x, y, radius
+
+
+def add_texture_to_screen(screen, image_path, x, y):
+    img = Image.open(image_path)
+
+    tk_img = ImageTk.PhotoImage(img)
+
+    canvas = screen.getcanvas()
+
+    canvas.create_image(x, y, image=tk_img)
+
+    if not hasattr(screen, "_textures"):
+        screen._textures = []
+    screen._textures.append(tk_img)

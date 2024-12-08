@@ -36,5 +36,6 @@ input.key_press(win, "Up", move_up)
 input.key_press(win, "Down", move_down)
 input.key_press(win, "Left", move_left)
 input.key_press(win, "Right", move_right)
+graphics.add_texture_to_screen(win, "text.png", 0, 0)
 
 window.run(win)
